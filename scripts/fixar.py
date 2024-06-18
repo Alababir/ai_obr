@@ -1,7 +1,8 @@
 import cv2
 
+
 carrega = cv2.CascadeClassifier("haarcascades/haarcascade_frontalface_default.xml")
-img = cv2.imread("imagens/imagen10.jpg")
+img = cv2.imread("imagens/imagen1.jpg", 1)
 imagen_cinza = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 rostos = carrega.detectMultiScale(imagen_cinza, scaleFactor=1.05, minNeighbors=2, minSize=(20, 20))
