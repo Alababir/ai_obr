@@ -7,7 +7,7 @@ while True:
     camera, frame = webCam.read()
     filmagem_cinza = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     descobre = Classificador.detectMultiScale(filmagem_cinza, scaleFactor=1.8, minNeighbors=2, minSize=(10, 10))
-
+    minSize = webCam.read()
 
     for (x, y, l, a) in descobre:
         cv2.rectangle(frame, (x, y), (x + l, y + a), (255, 0, 255), 1)
